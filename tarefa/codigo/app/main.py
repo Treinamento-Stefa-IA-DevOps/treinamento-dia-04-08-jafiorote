@@ -1,6 +1,6 @@
 import pickle
 import pandas as pd
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
 
 
 app = FastAPI()
@@ -17,7 +17,6 @@ def titanic(Sex:int, Age:float, Lifeboat:int, Pclass:int):
     msg_False = "Morreu!"
     life_status = True if y else False
     message = msg_True if y else msg_False
-
 
     return {"survived": life_status, "status": 200, "message": message}
 
